@@ -9,15 +9,15 @@ export const BottomNavBar: React.FC<BottomNavBarProps> = ({ activeTab, onTabChan
   return (
     <>
       {/* Mobile Bottom Navigation */}
-      <nav className="bg-[#0d0f0d] border-t border-[#3f4945] fixed bottom-0 w-full z-50 h-20 flex justify-around items-center px-2 md:hidden">
+      <nav className="bg-slate-950/90 backdrop-blur-md border-t border-slate-800 fixed bottom-0 w-full z-50 h-20 flex justify-around items-center px-3 md:hidden">
         {/* MAP TAB */}
         <button
           id="nav-tab-map-mobile"
           onClick={() => onTabChange('map')}
           className={`flex flex-col items-center justify-center transition-all ${
             activeTab === 'map'
-              ? 'bg-[#ffbf00] text-[#6d5000] rounded-full px-4 py-1.5 shadow-lg'
-              : 'text-[#bfc9c4] hover:text-[#94d3c1] w-16'
+              ? 'bg-sky-400 text-slate-950 rounded-full px-4 py-1.5 shadow-[0_0_15px_rgba(56,189,248,0.4)] font-bold'
+              : 'text-slate-400 hover:text-sky-400 w-16'
           }`}
         >
           <span
@@ -26,7 +26,7 @@ export const BottomNavBar: React.FC<BottomNavBarProps> = ({ activeTab, onTabChan
           >
             explore
           </span>
-          <span className="font-label-caps text-[11px] uppercase tracking-wider">MAP</span>
+          <span className="font-label-caps text-[10px] uppercase tracking-widest font-bold">MAP</span>
         </button>
 
         {/* COURSES TAB */}
@@ -35,8 +35,8 @@ export const BottomNavBar: React.FC<BottomNavBarProps> = ({ activeTab, onTabChan
           onClick={() => onTabChange('courses')}
           className={`flex flex-col items-center justify-center transition-all ${
             activeTab === 'courses'
-              ? 'bg-[#ffbf00] text-[#6d5000] rounded-full px-4 py-1.5 shadow-lg'
-              : 'text-[#bfc9c4] hover:text-[#94d3c1] w-16'
+              ? 'bg-sky-400 text-slate-950 rounded-full px-4 py-1.5 shadow-[0_0_15px_rgba(56,189,248,0.4)] font-bold'
+              : 'text-slate-400 hover:text-sky-400 w-16'
           }`}
         >
           <span
@@ -45,7 +45,7 @@ export const BottomNavBar: React.FC<BottomNavBarProps> = ({ activeTab, onTabChan
           >
             golf_course
           </span>
-          <span className="font-label-caps text-[11px] uppercase tracking-wider">COURSES</span>
+          <span className="font-label-caps text-[10px] uppercase tracking-widest font-bold">COURSES</span>
         </button>
 
         {/* FORECAST TAB */}
@@ -54,8 +54,8 @@ export const BottomNavBar: React.FC<BottomNavBarProps> = ({ activeTab, onTabChan
           onClick={() => onTabChange('forecast')}
           className={`flex flex-col items-center justify-center transition-all ${
             activeTab === 'forecast'
-              ? 'bg-[#ffbf00] text-[#6d5000] rounded-full px-4 py-1.5 shadow-lg'
-              : 'text-[#bfc9c4] hover:text-[#94d3c1] w-16'
+              ? 'bg-sky-400 text-slate-950 rounded-full px-4 py-1.5 shadow-[0_0_15px_rgba(56,189,248,0.4)] font-bold'
+              : 'text-slate-400 hover:text-sky-400 w-16'
           }`}
         >
           <span
@@ -64,7 +64,7 @@ export const BottomNavBar: React.FC<BottomNavBarProps> = ({ activeTab, onTabChan
           >
             thunderstorm
           </span>
-          <span className="font-label-caps text-[11px] uppercase tracking-wider">FORECAST</span>
+          <span className="font-label-caps text-[10px] uppercase tracking-widest font-bold">FORECAST</span>
         </button>
 
         {/* SAFETY TAB */}
@@ -73,8 +73,8 @@ export const BottomNavBar: React.FC<BottomNavBarProps> = ({ activeTab, onTabChan
           onClick={() => onTabChange('safety')}
           className={`flex flex-col items-center justify-center transition-all ${
             activeTab === 'safety'
-              ? 'bg-[#ffbf00] text-[#6d5000] rounded-full px-4 py-1.5 shadow-lg'
-              : 'text-[#bfc9c4] hover:text-[#94d3c1] w-16'
+              ? 'bg-sky-400 text-slate-950 rounded-full px-4 py-1.5 shadow-[0_0_15px_rgba(56,189,248,0.4)] font-bold'
+              : 'text-slate-400 hover:text-sky-400 w-16'
           }`}
         >
           <span
@@ -83,22 +83,24 @@ export const BottomNavBar: React.FC<BottomNavBarProps> = ({ activeTab, onTabChan
           >
             security
           </span>
-          <span className="font-label-caps text-[11px] uppercase tracking-wider">SAFETY</span>
+          <span className="font-label-caps text-[10px] uppercase tracking-widest font-bold">SAFETY</span>
         </button>
       </nav>
 
       {/* Desktop Side Navigation */}
-      <nav className="hidden md:flex fixed left-0 top-16 bottom-0 w-24 bg-[#0d0f0d] border-r border-[#3f4945] flex-col items-center py-8 gap-8 z-40">
+      <nav className="hidden md:flex fixed left-0 top-16 bottom-0 w-24 bg-slate-950/90 backdrop-blur-md border-r border-slate-800 flex-col items-center py-8 gap-8 z-40">
         <button
           id="nav-tab-map-desktop"
           onClick={() => onTabChange('map')}
           className={`flex flex-col items-center justify-center group transition-all ${
-            activeTab === 'map' ? 'text-[#ffbf00]' : 'text-[#bfc9c4] hover:text-[#94d3c1]'
+            activeTab === 'map' ? 'text-sky-400' : 'text-slate-400 hover:text-sky-300'
           }`}
         >
           <div
-            className={`p-3 rounded-full mb-1 transition-colors ${
-              activeTab === 'map' ? 'bg-[#ffbf00] text-[#6d5000]' : 'group-hover:bg-[#292a28]'
+            className={`p-3 rounded-2xl mb-1 transition-all ${
+              activeTab === 'map'
+                ? 'bg-sky-400 text-slate-950 shadow-[0_0_20px_rgba(56,189,248,0.4)]'
+                : 'group-hover:bg-slate-900 group-hover:text-slate-200'
             }`}
           >
             <span
@@ -108,19 +110,21 @@ export const BottomNavBar: React.FC<BottomNavBarProps> = ({ activeTab, onTabChan
               explore
             </span>
           </div>
-          <span className="font-label-caps text-xs">MAP</span>
+          <span className="font-label-caps text-[10px] uppercase tracking-wider font-bold">MAP</span>
         </button>
 
         <button
           id="nav-tab-courses-desktop"
           onClick={() => onTabChange('courses')}
           className={`flex flex-col items-center justify-center group transition-all ${
-            activeTab === 'courses' ? 'text-[#ffbf00]' : 'text-[#bfc9c4] hover:text-[#94d3c1]'
+            activeTab === 'courses' ? 'text-sky-400' : 'text-slate-400 hover:text-sky-300'
           }`}
         >
           <div
-            className={`p-3 rounded-full mb-1 transition-colors ${
-              activeTab === 'courses' ? 'bg-[#ffbf00] text-[#6d5000]' : 'group-hover:bg-[#292a28]'
+            className={`p-3 rounded-2xl mb-1 transition-all ${
+              activeTab === 'courses'
+                ? 'bg-sky-400 text-slate-950 shadow-[0_0_20px_rgba(56,189,248,0.4)]'
+                : 'group-hover:bg-slate-900 group-hover:text-slate-200'
             }`}
           >
             <span
@@ -130,19 +134,21 @@ export const BottomNavBar: React.FC<BottomNavBarProps> = ({ activeTab, onTabChan
               golf_course
             </span>
           </div>
-          <span className="font-label-caps text-xs">COURSES</span>
+          <span className="font-label-caps text-[10px] uppercase tracking-wider font-bold">COURSES</span>
         </button>
 
         <button
           id="nav-tab-forecast-desktop"
           onClick={() => onTabChange('forecast')}
           className={`flex flex-col items-center justify-center group transition-all ${
-            activeTab === 'forecast' ? 'text-[#ffbf00]' : 'text-[#bfc9c4] hover:text-[#94d3c1]'
+            activeTab === 'forecast' ? 'text-sky-400' : 'text-slate-400 hover:text-sky-300'
           }`}
         >
           <div
-            className={`p-3 rounded-full mb-1 transition-colors ${
-              activeTab === 'forecast' ? 'bg-[#ffbf00] text-[#6d5000]' : 'group-hover:bg-[#292a28]'
+            className={`p-3 rounded-2xl mb-1 transition-all ${
+              activeTab === 'forecast'
+                ? 'bg-sky-400 text-slate-950 shadow-[0_0_20px_rgba(56,189,248,0.4)]'
+                : 'group-hover:bg-slate-900 group-hover:text-slate-200'
             }`}
           >
             <span
@@ -152,19 +158,21 @@ export const BottomNavBar: React.FC<BottomNavBarProps> = ({ activeTab, onTabChan
               thunderstorm
             </span>
           </div>
-          <span className="font-label-caps text-xs">FORECAST</span>
+          <span className="font-label-caps text-[10px] uppercase tracking-wider font-bold">FORECAST</span>
         </button>
 
         <button
           id="nav-tab-safety-desktop"
           onClick={() => onTabChange('safety')}
           className={`flex flex-col items-center justify-center group transition-all ${
-            activeTab === 'safety' ? 'text-[#ffbf00]' : 'text-[#bfc9c4] hover:text-[#94d3c1]'
+            activeTab === 'safety' ? 'text-sky-400' : 'text-slate-400 hover:text-sky-300'
           }`}
         >
           <div
-            className={`p-3 rounded-full mb-1 transition-colors ${
-              activeTab === 'safety' ? 'bg-[#ffbf00] text-[#6d5000]' : 'group-hover:bg-[#292a28]'
+            className={`p-3 rounded-2xl mb-1 transition-all ${
+              activeTab === 'safety'
+                ? 'bg-sky-400 text-slate-950 shadow-[0_0_20px_rgba(56,189,248,0.4)]'
+                : 'group-hover:bg-slate-900 group-hover:text-slate-200'
             }`}
           >
             <span
@@ -174,7 +182,7 @@ export const BottomNavBar: React.FC<BottomNavBarProps> = ({ activeTab, onTabChan
               security
             </span>
           </div>
-          <span className="font-label-caps text-xs">SAFETY</span>
+          <span className="font-label-caps text-[10px] uppercase tracking-wider font-bold">SAFETY</span>
         </button>
       </nav>
     </>

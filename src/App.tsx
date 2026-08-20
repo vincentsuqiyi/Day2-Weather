@@ -127,7 +127,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#121412] text-[#e2e3df] antialiased flex flex-col relative font-body selection:bg-[#00daf3]/30 selection:text-[#00daf3]">
+    <div className="min-h-screen bg-slate-950 text-slate-100 antialiased flex flex-col relative font-sans selection:bg-sky-500/30 selection:text-sky-300">
       {/* Top Header */}
       <TopAppBar
         dangerLevel={dangerLevel}

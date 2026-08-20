@@ -1,28 +1,22 @@
 @import "tailwindcss";
 
 @layer base {
-  :root {
-    --font-anybody: 'Anybody', sans-serif;
-    --font-chivo: 'Chivo', sans-serif;
-    --font-jetbrains: 'JetBrains Mono', monospace;
-  }
-  
   body {
-    font-family: 'Chivo', sans-serif;
-    background-color: #121412;
-    color: #e2e3df;
+    background-color: #020617; /* slate-950 */
+    color: #f1f5f9; /* slate-100 */
     min-height: 100vh;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
 }
 
 .font-headline {
-  font-family: 'Anybody', sans-serif;
+  font-family: 'Anybody', -apple-system, BlinkMacSystemFont, sans-serif;
   font-weight: 700;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.025em;
 }
 
 .font-display-weather {
-  font-family: 'Anybody', sans-serif;
+  font-family: 'Anybody', -apple-system, BlinkMacSystemFont, sans-serif;
   font-weight: 800;
   letter-spacing: -0.04em;
 }
@@ -30,7 +24,7 @@
 .font-label-caps {
   font-family: 'JetBrains Mono', monospace;
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
 }
 
 .font-stat {
@@ -40,27 +34,31 @@
 
 .map-grid {
   background-image: 
-    linear-gradient(to right, #3f4945 1px, transparent 1px),
-    linear-gradient(to bottom, #3f4945 1px, transparent 1px);
+    linear-gradient(to right, rgba(51, 65, 85, 0.4) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(51, 65, 85, 0.4) 1px, transparent 1px);
   background-size: 32px 32px;
 }
 
-.glow-cyan {
-  box-shadow: 0 0 24px rgba(0, 218, 243, 0.2);
+.glow-sky {
+  box-shadow: 0 0 25px rgba(56, 189, 248, 0.25);
+}
+
+.glow-emerald {
+  box-shadow: 0 0 25px rgba(52, 211, 153, 0.25);
 }
 
 .glow-amber {
-  box-shadow: 0 0 24px rgba(255, 191, 0, 0.25);
+  box-shadow: 0 0 25px rgba(251, 191, 36, 0.25);
 }
 
-.glow-red {
-  box-shadow: 0 0 28px rgba(147, 0, 10, 0.6);
+.glow-rose {
+  box-shadow: 0 0 30px rgba(244, 63, 94, 0.45);
 }
 
 @keyframes pulse-danger {
-  0% { transform: scale(1); opacity: 0.8; }
+  0% { transform: scale(1); opacity: 0.85; }
   50% { transform: scale(1.08); opacity: 1; }
-  100% { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(1); opacity: 0.85; }
 }
 
 .pulse-danger-ring {
@@ -84,3 +82,4 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+

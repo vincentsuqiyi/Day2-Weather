@@ -28,151 +28,139 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({ isOpen, onClose, o
   };
 
   return (
-    <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
-      <div className="bg-[#121412] text-[#e2e3df] rounded-2xl border border-[#3f4945] w-full max-w-2xl overflow-hidden shadow-2xl my-8">
+    <div className="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto">
+      <div className="bg-slate-950/90 text-slate-100 rounded-3xl border border-slate-800 w-full max-w-2xl overflow-hidden shadow-2xl my-8">
         {/* Top Header */}
-        <header className="flex justify-between items-center px-4 md:px-6 h-16 border-b border-[#3f4945] bg-[#1e201e]">
+        <header className="flex justify-between items-center px-6 h-16 border-b border-slate-800 bg-slate-900/80">
           <button
             id="btn-checkout-back"
             onClick={onClose}
-            className="text-[#94d3c1] hover:bg-[#292a28] p-2 rounded-full flex items-center justify-center transition-colors active:opacity-80"
+            className="text-slate-400 hover:text-white p-2 rounded-xl flex items-center justify-center transition-colors"
           >
             <span className="material-symbols-outlined">arrow_back</span>
           </button>
-          <h1 className="font-headline text-lg md:text-xl font-bold text-[#94d3c1] tracking-tight uppercase">
-            CHECKOUT
+          <h1 className="font-headline text-lg md:text-xl font-bold text-slate-100 tracking-tight uppercase">
+            EVENT PRO CHECKOUT
           </h1>
           <div className="w-10"></div>
         </header>
 
         {isPaid ? (
           /* Payment Success State */
-          <div className="p-6 md:p-8 text-center space-y-6">
-            <div className="w-16 h-16 bg-[#004d40] text-[#94d3c1] rounded-full flex items-center justify-center mx-auto border border-[#94d3c1]">
+          <div className="p-8 md:p-10 text-center space-y-6">
+            <div className="w-16 h-16 bg-emerald-950/80 text-emerald-400 rounded-3xl flex items-center justify-center mx-auto border border-emerald-800/80 shadow-[0_0_20px_rgba(52,211,153,0.3)]">
               <span className="material-symbols-outlined text-4xl">check_circle</span>
             </div>
             <div>
-              <h2 className="font-headline text-2xl text-[#94d3c1]">License Activated!</h2>
-              <p className="text-sm text-[#bfc9c4] mt-1">
+              <h2 className="font-headline text-2xl text-slate-100 font-bold">License Activated!</h2>
+              <p className="text-sm text-slate-400 mt-1">
                 Event Pro Shield single-event license has been provisioned.
               </p>
             </div>
 
-            <div className="bg-[#1e201e] border border-[#3f4945] rounded-xl p-4 text-left font-label-caps text-xs space-y-2">
-              <div className="flex justify-between text-[#89938f]">
+            <div className="bg-slate-900/80 border border-slate-800 rounded-2xl p-5 text-left font-label-caps text-xs space-y-2.5">
+              <div className="flex justify-between text-slate-400 font-bold">
                 <span>ORDER ID</span>
-                <span className="text-[#e2e3df]">SGP-SHIELD-2026-9942</span>
+                <span className="text-slate-200">SGP-SHIELD-2026-9942</span>
               </div>
-              <div className="flex justify-between text-[#89938f]">
+              <div className="flex justify-between text-slate-400 font-bold">
                 <span>AMOUNT PAID</span>
-                <span className="text-[#ffe2ab] font-bold">$499.00 SGD</span>
+                <span className="text-amber-400 font-bold text-sm">$499.00 SGD</span>
               </div>
-              <div className="flex justify-between text-[#89938f]">
+              <div className="flex justify-between text-slate-400 font-bold">
                 <span>MARSHALL DISPATCH KEY</span>
-                <span className="text-[#00daf3]">EP-KEY-SENTOSA-4X9</span>
+                <span className="text-sky-400 font-bold">EP-KEY-SENTOSA-4X9</span>
               </div>
             </div>
 
             <button
               onClick={onClose}
-              className="w-full bg-[#94d3c1] text-[#00382e] font-label-caps text-xs py-3.5 rounded-xl font-bold hover:bg-[#afefdd] transition-colors"
+              className="w-full bg-sky-400 text-slate-950 font-label-caps text-xs py-4 rounded-2xl font-bold hover:bg-sky-300 transition-all shadow-[0_0_20px_rgba(56,189,248,0.4)] uppercase tracking-wider"
             >
               RETURN TO DASHBOARD
             </button>
           </div>
         ) : (
           /* Checkout Form */
-          <div className="p-4 md:p-6 space-y-6 max-h-[80vh] overflow-y-auto no-scrollbar">
+          <div className="p-6 md:p-8 space-y-6 max-h-[80vh] overflow-y-auto no-scrollbar">
             {/* Order Summary Bento */}
-            <section className="bg-[#1e201e] rounded-xl border border-[#3f4945] overflow-hidden">
-              <div className="p-3.5 border-b border-[#3f4945] bg-[#292a28] flex justify-between items-center">
-                <h2 className="font-label-caps text-xs uppercase text-[#bfc9c4]">Order Summary</h2>
-                <span className="material-symbols-outlined text-[#bfc9c4] text-lg">
+            <section className="bg-slate-900/50 backdrop-blur-md rounded-3xl border border-slate-800 overflow-hidden shadow-lg">
+              <div className="p-4 border-b border-slate-800 bg-slate-900/80 flex justify-between items-center">
+                <h2 className="font-label-caps text-xs uppercase text-slate-400 font-bold tracking-wider">Order Summary</h2>
+                <span className="material-symbols-outlined text-slate-400 text-lg">
                   shopping_cart
                 </span>
               </div>
 
-              <div className="p-4 md:p-5 space-y-4">
+              <div className="p-5 md:p-6 space-y-4">
                 <div className="flex justify-between items-start">
                   <div>
-                    <h3 className="font-headline text-lg md:text-xl text-[#e2e3df] font-bold tracking-tight">
+                    <h3 className="font-headline text-lg md:text-xl text-slate-100 font-bold tracking-tight">
                       Event Pro Shield
                     </h3>
-                    <p className="text-xs text-[#bfc9c4] mt-0.5">Single Event License</p>
+                    <p className="text-xs text-slate-400 mt-0.5">Single Tournament License</p>
                   </div>
                   <div className="text-right">
-                    <span className="font-headline text-xl md:text-2xl text-[#ffe2ab] font-bold">
+                    <span className="font-headline text-2xl text-slate-100 font-extrabold">
                       $499.00
                     </span>
                   </div>
                 </div>
 
-                <div className="h-px w-full bg-[#3f4945]"></div>
+                <div className="h-px w-full bg-slate-800"></div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
                   <div className="flex items-start">
-                    <span
-                      className="material-symbols-outlined text-[#94d3c1] mr-2 text-base fill-icon"
-                      style={{ fontVariationSettings: "'FILL' 1" }}
-                    >
+                    <span className="material-symbols-outlined text-sky-400 mr-2 text-base">
                       check_circle
                     </span>
                     <div>
-                      <span className="font-label-caps uppercase block text-[#e2e3df]">
+                      <span className="font-label-caps uppercase block text-slate-200 font-bold">
                         Real-Time Alerts
                       </span>
-                      <span className="text-[#bfc9c4]">
+                      <span className="text-slate-400">
                         Unlimited SMS warnings for marshalls and players.
                       </span>
                     </div>
                   </div>
 
                   <div className="flex items-start">
-                    <span
-                      className="material-symbols-outlined text-[#94d3c1] mr-2 text-base fill-icon"
-                      style={{ fontVariationSettings: "'FILL' 1" }}
-                    >
+                    <span className="material-symbols-outlined text-sky-400 mr-2 text-base">
                       check_circle
                     </span>
                     <div>
-                      <span className="font-label-caps uppercase block text-[#e2e3df]">
+                      <span className="font-label-caps uppercase block text-slate-200 font-bold">
                         Marshall Dashboard
                       </span>
-                      <span className="text-[#bfc9c4]">
+                      <span className="text-slate-400">
                         Command center access for up to 5 devices.
                       </span>
                     </div>
                   </div>
 
                   <div className="flex items-start">
-                    <span
-                      className="material-symbols-outlined text-[#94d3c1] mr-2 text-base fill-icon"
-                      style={{ fontVariationSettings: "'FILL' 1" }}
-                    >
+                    <span className="material-symbols-outlined text-sky-400 mr-2 text-base">
                       check_circle
                     </span>
                     <div>
-                      <span className="font-label-caps uppercase block text-[#e2e3df]">
+                      <span className="font-label-caps uppercase block text-slate-200 font-bold">
                         Evacuation Routing
                       </span>
-                      <span className="text-[#bfc9c4]">
+                      <span className="text-slate-400">
                         Automated safe-zone pathing on course maps.
                       </span>
                     </div>
                   </div>
 
                   <div className="flex items-start">
-                    <span
-                      className="material-symbols-outlined text-[#94d3c1] mr-2 text-base fill-icon"
-                      style={{ fontVariationSettings: "'FILL' 1" }}
-                    >
+                    <span className="material-symbols-outlined text-sky-400 mr-2 text-base">
                       check_circle
                     </span>
                     <div>
-                      <span className="font-label-caps uppercase block text-[#e2e3df]">
+                      <span className="font-label-caps uppercase block text-slate-200 font-bold">
                         Post-Event Report
                       </span>
-                      <span className="text-[#bfc9c4]">
+                      <span className="text-slate-400">
                         Detailed meteorological log for liability coverage.
                       </span>
                     </div>
@@ -184,29 +172,29 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({ isOpen, onClose, o
             {/* Payment Details */}
             <section className="space-y-4">
               {/* Payment Method Toggle */}
-              <div className="bg-[#1e201e] rounded-xl border border-[#3f4945] p-1 flex">
+              <div className="bg-slate-900/80 rounded-2xl border border-slate-800 p-1 flex">
                 <button
                   type="button"
                   onClick={() => setPaymentMethod('card')}
-                  className={`flex-1 py-2.5 px-4 rounded-lg font-label-caps text-xs uppercase flex items-center justify-center transition-colors ${
+                  className={`flex-1 py-2.5 px-4 rounded-xl font-label-caps text-xs uppercase flex items-center justify-center transition-all ${
                     paymentMethod === 'card'
-                      ? 'bg-[#292a28] border border-[#89938f] text-[#e2e3df]'
-                      : 'text-[#bfc9c4] hover:bg-[#292a28]/50'
+                      ? 'bg-sky-400 text-slate-950 font-bold shadow-[0_0_15px_rgba(56,189,248,0.3)]'
+                      : 'text-slate-400 hover:text-slate-200'
                   }`}
                 >
-                  <span className="material-symbols-outlined mr-2 text-sm text-[#94d3c1]">
+                  <span className="material-symbols-outlined mr-2 text-sm">
                     credit_card
                   </span>
-                  Card
+                  Credit / Debit Card
                 </button>
 
                 <button
                   type="button"
                   onClick={() => setPaymentMethod('apple_pay')}
-                  className={`flex-1 py-2.5 px-4 rounded-lg font-label-caps text-xs uppercase flex items-center justify-center transition-colors ${
+                  className={`flex-1 py-2.5 px-4 rounded-xl font-label-caps text-xs uppercase flex items-center justify-center transition-all ${
                     paymentMethod === 'apple_pay'
-                      ? 'bg-[#292a28] border border-[#89938f] text-[#e2e3df]'
-                      : 'text-[#bfc9c4] hover:bg-[#292a28]/50'
+                      ? 'bg-sky-400 text-slate-950 font-bold shadow-[0_0_15px_rgba(56,189,248,0.3)]'
+                      : 'text-slate-400 hover:text-slate-200'
                   }`}
                 >
                   <span className="material-symbols-outlined mr-2 text-sm">phone_iphone</span>
@@ -217,15 +205,15 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({ isOpen, onClose, o
               {/* Billing Form */}
               <form
                 onSubmit={handlePay}
-                className="space-y-4 bg-[#1e201e] p-4 md:p-5 rounded-xl border border-[#3f4945]"
+                className="space-y-4 bg-slate-900/50 backdrop-blur-md p-6 rounded-3xl border border-slate-800 shadow-xl"
               >
-                <h2 className="font-label-caps text-xs uppercase text-[#bfc9c4] mb-2 flex items-center">
-                  <span className="material-symbols-outlined mr-1.5 text-sm">lock</span>
+                <h2 className="font-label-caps text-xs uppercase text-slate-300 font-bold mb-2 flex items-center">
+                  <span className="material-symbols-outlined mr-1.5 text-sm text-sky-400">lock</span>
                   Secure Checkout
                 </h2>
 
                 <div>
-                  <label className="font-label-caps text-[11px] text-[#bfc9c4] block mb-1 uppercase">
+                  <label className="font-label-caps text-[10px] text-slate-400 block mb-1 uppercase font-bold tracking-wider">
                     Cardholder Name
                   </label>
                   <input
@@ -233,12 +221,12 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({ isOpen, onClose, o
                     required
                     value={cardName}
                     onChange={(e) => setCardName(e.target.value)}
-                    className="w-full bg-[#121412] border-0 border-b-2 border-[#3f4945] text-[#e2e3df] focus:ring-0 focus:border-[#00daf3] transition-colors px-2 py-2 uppercase font-body text-sm rounded-t"
+                    className="w-full bg-slate-900/90 border border-slate-800 text-slate-100 focus:border-sky-400 transition-colors px-3 py-2.5 uppercase font-sans text-xs rounded-2xl outline-none"
                   />
                 </div>
 
                 <div>
-                  <label className="font-label-caps text-[11px] text-[#bfc9c4] block mb-1 uppercase">
+                  <label className="font-label-caps text-[10px] text-slate-400 block mb-1 uppercase font-bold tracking-wider">
                     Card Number
                   </label>
                   <div className="relative">
@@ -247,9 +235,9 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({ isOpen, onClose, o
                       required
                       value={cardNumber}
                       onChange={(e) => setCardNumber(e.target.value)}
-                      className="w-full bg-[#121412] border-0 border-b-2 border-[#3f4945] text-[#e2e3df] focus:ring-0 focus:border-[#00daf3] transition-colors px-2 py-2 font-label-caps text-xs rounded-t"
+                      className="w-full bg-slate-900/90 border border-slate-800 text-slate-100 focus:border-sky-400 transition-colors px-3 py-2.5 font-sans text-xs rounded-2xl outline-none"
                     />
-                    <span className="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-[#bfc9c4] text-sm">
+                    <span className="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-slate-500 text-sm">
                       credit_score
                     </span>
                   </div>
@@ -257,7 +245,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({ isOpen, onClose, o
 
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <label className="font-label-caps text-[11px] text-[#bfc9c4] block mb-1 uppercase">
+                    <label className="font-label-caps text-[10px] text-slate-400 block mb-1 uppercase font-bold tracking-wider">
                       Expiry
                     </label>
                     <input
@@ -265,11 +253,11 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({ isOpen, onClose, o
                       required
                       value={expiry}
                       onChange={(e) => setExpiry(e.target.value)}
-                      className="w-full bg-[#121412] border-0 border-b-2 border-[#3f4945] text-[#e2e3df] focus:ring-0 focus:border-[#00daf3] transition-colors px-2 py-2 font-label-caps text-xs rounded-t"
+                      className="w-full bg-slate-900/90 border border-slate-800 text-slate-100 focus:border-sky-400 transition-colors px-3 py-2.5 font-sans text-xs rounded-2xl outline-none"
                     />
                   </div>
                   <div>
-                    <label className="font-label-caps text-[11px] text-[#bfc9c4] block mb-1 uppercase">
+                    <label className="font-label-caps text-[10px] text-slate-400 block mb-1 uppercase font-bold tracking-wider">
                       CVC
                     </label>
                     <input
@@ -277,25 +265,25 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({ isOpen, onClose, o
                       required
                       value={cvc}
                       onChange={(e) => setCvc(e.target.value)}
-                      className="w-full bg-[#121412] border-0 border-b-2 border-[#3f4945] text-[#e2e3df] focus:ring-0 focus:border-[#00daf3] transition-colors px-2 py-2 font-label-caps text-xs rounded-t"
+                      className="w-full bg-slate-900/90 border border-slate-800 text-slate-100 focus:border-sky-400 transition-colors px-3 py-2.5 font-sans text-xs rounded-2xl outline-none"
                     />
                   </div>
                 </div>
 
                 <div className="pt-3">
                   <div className="flex justify-between items-center mb-4">
-                    <span className="font-label-caps text-xs uppercase text-[#e2e3df]">
+                    <span className="font-label-caps text-xs uppercase text-slate-400 font-bold">
                       Total Amount
                     </span>
-                    <span className="font-headline text-2xl text-[#ffe2ab] font-bold">
-                      $499.00
+                    <span className="font-headline text-2xl text-slate-100 font-bold">
+                      $499.00 SGD
                     </span>
                   </div>
 
                   <button
                     type="submit"
                     disabled={isProcessing}
-                    className="w-full bg-[#ffe2ab] text-[#402d00] font-label-caps text-xs uppercase py-3.5 rounded-full flex items-center justify-center hover:bg-[#ffdfa0] transition-colors active:scale-95 duration-150 font-bold shadow-lg disabled:opacity-50"
+                    className="w-full bg-sky-400 text-slate-950 font-label-caps text-xs uppercase py-4 rounded-2xl flex items-center justify-center hover:bg-sky-300 transition-all active:scale-95 duration-150 font-bold shadow-[0_0_20px_rgba(56,189,248,0.4)] disabled:opacity-50 tracking-wider"
                   >
                     {isProcessing ? (
                       <span className="flex items-center gap-2">
@@ -304,14 +292,14 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({ isOpen, onClose, o
                     ) : (
                       <>
                         <span className="material-symbols-outlined mr-2 text-sm">lock</span>
-                        Confirm &amp; Pay
+                        Confirm &amp; Pay $499.00
                       </>
                     )}
                   </button>
                 </div>
               </form>
 
-              <p className="text-center text-[10px] text-[#bfc9c4]/70 font-label-caps uppercase tracking-wider">
+              <p className="text-center text-[10px] text-slate-500 font-label-caps uppercase tracking-wider">
                 BY CONFIRMING, YOU AGREE TO THE EVENT TERMS OF SERVICE.
               </p>
             </section>

@@ -32,37 +32,37 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, onLoginSu
   };
 
   return (
-    <div className="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto">
+    <div className="fixed inset-0 z-50 bg-slate-950/85 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto">
       <main className="w-full max-w-md flex flex-col gap-6 relative z-10 my-auto">
         {/* Header */}
         <header className="text-center flex flex-col items-center gap-3">
-          <div className="h-16 w-16 bg-[#004d40] rounded-full flex items-center justify-center border border-[#3f4945] shadow-lg">
+          <div className="h-16 w-16 bg-sky-500/10 rounded-3xl flex items-center justify-center border border-sky-500/30 shadow-[0_0_20px_rgba(56,189,248,0.25)]">
             <span
-              className="material-symbols-outlined text-[#94d3c1] text-4xl"
+              className="material-symbols-outlined text-sky-400 text-3xl"
               style={{ fontVariationSettings: "'FILL' 1" }}
             >
               security
             </span>
           </div>
-          <h1 className="font-headline text-2xl md:text-3xl text-[#94d3c1] tracking-tight uppercase">
+          <h1 className="font-headline text-2xl md:text-3xl text-slate-100 tracking-tight font-bold uppercase">
             SGP GOLF SHIELD
           </h1>
-          <p className="text-[#bfc9c4] font-body text-sm">Professional Course Monitor</p>
+          <p className="text-slate-400 font-sans text-xs">Professional Course Monitor &amp; Marshall Portal</p>
         </header>
 
         {/* Form Card */}
-        <div className="bg-[#1e201e] rounded-xl border border-[#3f4945] p-6 shadow-2xl shadow-black/80">
+        <div className="bg-slate-950/90 rounded-3xl border border-slate-800 p-6 md:p-8 shadow-2xl shadow-black/80 backdrop-blur-xl">
           {/* Tab Indicator */}
-          <div className="flex border-b border-[#3f4945] mb-6">
+          <div className="flex border-b border-slate-800 mb-6">
             <button
               onClick={() => {
                 setActiveTab('login');
                 setStep('credentials');
               }}
-              className={`w-1/2 pb-3 text-center font-label-caps text-xs transition-colors ${
+              className={`w-1/2 pb-3 text-center font-label-caps text-xs transition-all font-bold tracking-wider ${
                 activeTab === 'login'
-                  ? 'border-b-2 border-[#94d3c1] text-[#94d3c1] font-bold'
-                  : 'text-[#bfc9c4] hover:text-[#e2e3df]'
+                  ? 'border-b-2 border-sky-400 text-sky-400'
+                  : 'text-slate-400 hover:text-slate-200'
               }`}
             >
               LOGIN
@@ -72,25 +72,25 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, onLoginSu
                 setActiveTab('2fa');
                 setStep('pin');
               }}
-              className={`w-1/2 pb-3 text-center font-label-caps text-xs transition-colors ${
+              className={`w-1/2 pb-3 text-center font-label-caps text-xs transition-all font-bold tracking-wider ${
                 activeTab === '2fa'
-                  ? 'border-b-2 border-[#94d3c1] text-[#94d3c1] font-bold'
-                  : 'text-[#bfc9c4] hover:text-[#e2e3df]'
+                  ? 'border-b-2 border-sky-400 text-sky-400'
+                  : 'text-slate-400 hover:text-slate-200'
               }`}
             >
-              2FA SETUP
+              2FA VERIFY
             </button>
           </div>
 
           {step === 'credentials' ? (
             /* Login Form */
             <form onSubmit={handleAuthenticate} className="flex flex-col gap-4">
-              <div className="flex flex-col gap-1">
-                <label className="font-label-caps text-[11px] text-[#bfc9c4]" htmlFor="operator-email">
+              <div className="flex flex-col gap-1.5">
+                <label className="font-label-caps text-[10px] text-slate-400 uppercase tracking-wider font-bold" htmlFor="operator-email">
                   OPERATOR ID
                 </label>
                 <div className="relative">
-                  <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[#89938f] text-lg">
+                  <span className="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500 text-lg">
                     person
                   </span>
                   <input
@@ -100,17 +100,17 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, onLoginSu
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Enter ID or Email"
-                    className="w-full bg-[#0d0f0d] border-b-2 border-[#89938f] focus:border-[#00daf3] focus:ring-0 text-[#e2e3df] pl-10 pr-4 py-2.5 rounded-t transition-colors outline-none font-body text-sm"
+                    className="w-full bg-slate-900/90 border border-slate-800 focus:border-sky-400 text-slate-100 pl-11 pr-4 py-2.5 rounded-2xl transition-colors outline-none font-sans text-xs"
                   />
                 </div>
               </div>
 
-              <div className="flex flex-col gap-1">
-                <label className="font-label-caps text-[11px] text-[#bfc9c4]" htmlFor="operator-passcode">
+              <div className="flex flex-col gap-1.5">
+                <label className="font-label-caps text-[10px] text-slate-400 uppercase tracking-wider font-bold" htmlFor="operator-passcode">
                   PASSCODE
                 </label>
                 <div className="relative">
-                  <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[#89938f] text-lg">
+                  <span className="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500 text-lg">
                     key
                   </span>
                   <input
@@ -120,7 +120,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, onLoginSu
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     placeholder="Enter Passcode"
-                    className="w-full bg-[#0d0f0d] border-b-2 border-[#89938f] focus:border-[#00daf3] focus:ring-0 text-[#e2e3df] pl-10 pr-4 py-2.5 rounded-t transition-colors outline-none font-body text-sm"
+                    className="w-full bg-slate-900/90 border border-slate-800 focus:border-sky-400 text-slate-100 pl-11 pr-4 py-2.5 rounded-2xl transition-colors outline-none font-sans text-xs"
                   />
                 </div>
               </div>
@@ -128,7 +128,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, onLoginSu
               <button
                 id="btn-authenticate-operator"
                 type="submit"
-                className="mt-3 w-full h-12 bg-[#ffe2ab] text-[#402d00] font-label-caps text-xs rounded-lg flex items-center justify-center gap-2 hover:bg-[#ffdfa0] transition-colors active:scale-95 font-bold shadow-md uppercase"
+                className="mt-3 w-full h-12 bg-sky-400 text-slate-950 font-label-caps text-xs rounded-2xl flex items-center justify-center gap-2 hover:bg-sky-300 transition-all active:scale-95 font-bold shadow-[0_0_20px_rgba(56,189,248,0.4)] uppercase tracking-wider"
               >
                 <span className="material-symbols-outlined text-lg">login</span>
                 AUTHENTICATE
@@ -138,17 +138,17 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, onLoginSu
             /* 2FA Form */
             <div className="flex flex-col gap-5">
               <div className="text-center mb-1">
-                <span className="material-symbols-outlined text-[#00daf3] text-4xl mb-1">
+                <span className="material-symbols-outlined text-sky-400 text-4xl mb-1">
                   phonelink_ring
                 </span>
-                <h2 className="font-headline text-lg text-[#e2e3df]">Verification Required</h2>
-                <p className="text-[#bfc9c4] text-xs mt-0.5">
+                <h2 className="font-headline text-lg text-slate-100 font-bold">Verification Required</h2>
+                <p className="text-slate-400 text-xs mt-0.5">
                   A secure code has been dispatched to terminal ending in ***89
                 </p>
               </div>
 
               <div className="flex flex-col gap-2">
-                <label className="font-label-caps text-[10px] text-center text-[#bfc9c4]">
+                <label className="font-label-caps text-[10px] text-center text-slate-400 uppercase tracking-wider font-bold">
                   ENTER 6-DIGIT PIN
                 </label>
                 <div className="flex justify-between gap-1.5 px-2">
@@ -159,7 +159,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, onLoginSu
                       maxLength={1}
                       value={digit}
                       onChange={(e) => handlePinChange(idx, e.target.value)}
-                      className="w-10 h-12 text-center bg-[#0d0f0d] border-b-2 border-[#89938f] focus:border-[#00daf3] focus:ring-0 text-[#e2e3df] rounded-t text-xl font-bold outline-none"
+                      className="w-10 h-12 text-center bg-slate-900/90 border border-slate-800 focus:border-sky-400 text-slate-100 rounded-2xl text-xl font-bold outline-none shadow-sm"
                     />
                   ))}
                 </div>
@@ -168,7 +168,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, onLoginSu
               <button
                 type="button"
                 onClick={handleCompleteLogin}
-                className="mt-2 w-full h-12 bg-[#94d3c1] text-[#00382e] font-label-caps text-xs rounded-lg flex items-center justify-center gap-2 hover:bg-[#afefdd] transition-colors active:scale-95 shadow-[0_0_16px_rgba(0,218,243,0.3)] font-bold uppercase"
+                className="mt-2 w-full h-12 bg-sky-400 text-slate-950 font-label-caps text-xs rounded-2xl flex items-center justify-center gap-2 hover:bg-sky-300 transition-all active:scale-95 shadow-[0_0_20px_rgba(56,189,248,0.4)] font-bold uppercase tracking-wider"
               >
                 <span className="material-symbols-outlined text-lg">verified_user</span>
                 VERIFY &amp; ACCESS
@@ -177,7 +177,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, onLoginSu
               <button
                 type="button"
                 onClick={() => setStep('credentials')}
-                className="w-full text-center text-[#bfc9c4] font-label-caps text-xs hover:text-[#94d3c1] py-1 flex items-center justify-center gap-1.5 uppercase"
+                className="w-full text-center text-slate-400 font-label-caps text-xs hover:text-slate-200 py-1 flex items-center justify-center gap-1.5 uppercase font-bold"
               >
                 <span className="material-symbols-outlined text-sm">arrow_back</span>
                 BACK
@@ -188,17 +188,17 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, onLoginSu
 
         {/* Footer / Support Info */}
         <div className="text-center flex flex-col items-center gap-2">
-          <span className="font-label-caps text-xs text-[#89938f] flex items-center gap-1">
-            <span className="material-symbols-outlined text-sm">lock</span>
+          <span className="font-label-caps text-xs text-slate-400 flex items-center gap-1 font-bold">
+            <span className="material-symbols-outlined text-sm text-sky-400">lock</span>
             END-TO-END ENCRYPTED
           </span>
-          <p className="text-[11px] text-[#3f4945] max-w-xs">
+          <p className="text-[11px] text-slate-500 max-w-xs">
             Authorized Personnel Only. Logouts are enforced after 15 mins of inactivity.
           </p>
 
           <button
             onClick={onClose}
-            className="text-xs text-[#89938f] hover:text-[#e2e3df] underline font-label-caps mt-1"
+            className="text-xs text-slate-400 hover:text-slate-200 underline font-label-caps mt-1 font-bold"
           >
             Close Dialog
           </button>
