@@ -1,0 +1,6 @@
+{
+  "name": "SGP Golf Shield",
+  "description": "Professional real-time meteorological intelligence, lightning tracking, and course safety monitoring for Singapore golf courses powered by live data.gov.sg APIs.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

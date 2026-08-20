@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-anybody: 'Anybody', sans-serif;
+    --font-chivo: 'Chivo', sans-serif;
+    --font-jetbrains: 'JetBrains Mono', monospace;
+  }
+  
+  body {
+    font-family: 'Chivo', sans-serif;
+    background-color: #121412;
+    color: #e2e3df;
+    min-height: 100vh;
+  }
+}
+
+.font-headline {
+  font-family: 'Anybody', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.font-display-weather {
+  font-family: 'Anybody', sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+.font-label-caps {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.font-stat {
+  font-family: 'Chivo', sans-serif;
+  font-weight: 600;
+}
+
+.map-grid {
+  background-image: 
+    linear-gradient(to right, #3f4945 1px, transparent 1px),
+    linear-gradient(to bottom, #3f4945 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.glow-cyan {
+  box-shadow: 0 0 24px rgba(0, 218, 243, 0.2);
+}
+
+.glow-amber {
+  box-shadow: 0 0 24px rgba(255, 191, 0, 0.25);
+}
+
+.glow-red {
+  box-shadow: 0 0 28px rgba(147, 0, 10, 0.6);
+}
+
+@keyframes pulse-danger {
+  0% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.08); opacity: 1; }
+  100% { transform: scale(1); opacity: 0.8; }
+}
+
+.pulse-danger-ring {
+  animation: pulse-danger 2s infinite ease-in-out;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+.material-symbols-outlined.fill-icon,
+.material-symbols-outlined.filled {
+  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* Hide scrollbars for slick radar UI */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
